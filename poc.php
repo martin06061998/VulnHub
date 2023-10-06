@@ -1,5 +1,0 @@
-<?php 
-
-echo system('whoami');
-
-?>
